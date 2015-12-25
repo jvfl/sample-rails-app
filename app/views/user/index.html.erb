@@ -1,0 +1,7 @@
+<p>Parabéns! Você acaba de se registrar!</p>
+
+<% if user_signed_in? %>
+  <li>
+  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
+  </li>
+<% end %>

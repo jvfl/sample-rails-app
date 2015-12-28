@@ -1,0 +1,46 @@
+pt-BR:
+  login: "Entrar"
+  logout: "Sair"
+  password: "Senha"
+  password_conditions: "Apenas números e letras, com no mínimo %{minimum_password_length} caracteres."
+  password_confirmation: "Confirmação da Senha"
+  forgot_pass: "Esqueceu sua senha?"
+  change_my_pass: "Mudar minha senha"
+  new_pass: "Nova Senha"
+  conf_new_pass: "Confirmar nova senha"
+  change_pass: "Mudar senha"
+  remember_me: "Permanecer logado"
+  signup: "Cadastrar"
+  confirmation_inst: "Não recebeu as instruções de confirmação?" 
+  resend_confirmation: "Mandar confirmação novamente"
+  send_inst: "Enviar instruções"
+  email:
+    welcome_header: "Bem-vindo %{email}!"
+    welcome_body: "Você pode confirmar a sua conta através do link abaixo:"
+    welcome_conf: 'Confirmar minha conta'
+    hello_header: "Olá %{email}!"
+    password_change_body: "Estamos mandando este e-mail para lhe notificar que sua senha foi alterada."
+    request_pass_change_body: "Alguém pediu um link para mudar sua senha. Você pode fazer isto através do link abaixo:"
+    request_pass_change_ignore: "Se você não requisitou uma troca de senha, por favor ignore este e-email."
+    request_pass_change_modification: "Sua senha não vai ser alterada até você acessar o link acima e criar uma senha nova."
+  activerecord:
+    models:
+      user:
+        one: "Usuário"
+        other: "Usuários"
+    attributes:
+      user:
+        password: "Senha"
+        password_confirmation: "Confirmação da Senha"
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              blank: ": por favor preencha o campo de email."
+            password:
+              blank: ": por favor preencha o campo de senha."
+              too_short: ": senha muito curta."
+              invalid: ": senha inválida."
+            password_confirmation:
+              confirmation: ": a senha está diferente da confirmação."

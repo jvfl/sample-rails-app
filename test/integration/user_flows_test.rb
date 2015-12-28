@@ -18,22 +18,22 @@ class UserFlowsTest < ActionDispatch::IntegrationTest
 
   test "alphanumeric passwords only" do
   	visit "/register"
-    fill_in 'Email', :with => 'test2@ex.org'
-    fill_in 'Password', :with => '123456789!'
-    fill_in 'Password confirmation', :with => '123456789!'
+    fill_in 'user_email', :with => 'test2@ex.org'
+    fill_in 'user_password', :with => '123456789!', :exact => true
+    fill_in 'user_password_confirmation', :with => '123456789!'
     click_button 'Sign up'
     page.must_have_content 'Password is invalid'
   end
 
   test "user has to confirm via e-mail" do
     visit "/register"
-    fill_in 'Email', :with => 'test@ex.org'
-    fill_in 'Password', :with => 'ab123456789'
-    fill_in 'Password confirmation', :with => 'ab123456789'
+    fill_in 'user_email', :with => 'test@ex.org'
+    fill_in 'user_password', :with => 'ab123456789'
+    fill_in 'user_password_confirmation', :with => 'ab123456789'
     click_button 'Sign up'
     page.must_have_content 'Log in'
-    fill_in 'Email', :with => 'test@ex.org'
-    fill_in 'Password', :with => 'ab123456789'
+    fill_in 'user_email', :with => 'test@ex.org'
+    fill_in 'user_password', :with => 'ab123456789'
     click_button 'Log in'
     page.must_have_content 'You have to confirm your email address before continuing.'
   end
@@ -42,13 +42,12 @@ class UserFlowsTest < ActionDispatch::IntegrationTest
 
     #Using the tom user from the fixtures. Password is hardcoded because there's no such field in the db.
     visit "/login"
-    fill_in 'Email', :with => users(:tom).email
-    fill_in 'Password', :with => '123456789ab'
+    fill_in 'user_email', :with => users(:tom).email
+    fill_in 'user_password', :with => '123456789ab'
     click_button 'Log in'
     page.must_have_content 'Signed in successfully.'
-
     # Logout so other tests can occur without problems
-    click_link 'Logout'
+    click_link 'Log out'
   end
 
 end

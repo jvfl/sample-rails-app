@@ -21,8 +21,8 @@ class UserFlowsTest < ActionDispatch::IntegrationTest
     fill_in 'user_email', :with => 'test2@ex.org'
     fill_in 'user_password', :with => '123456789!', :exact => true
     fill_in 'user_password_confirmation', :with => '123456789!'
-    click_button 'Sign up'
-    page.must_have_content 'Password is invalid'
+    click_button I18n.t(:signup)
+    page.must_have_content I18n.t(:'activerecord.errors.models.user.attributes.password.invalid')
   end
 
   test "user has to confirm via e-mail" do
@@ -30,12 +30,12 @@ class UserFlowsTest < ActionDispatch::IntegrationTest
     fill_in 'user_email', :with => 'test@ex.org'
     fill_in 'user_password', :with => 'ab123456789'
     fill_in 'user_password_confirmation', :with => 'ab123456789'
-    click_button 'Sign up'
-    page.must_have_content 'Log in'
+    click_button I18n.t(:signup)
+    page.must_have_content I18n.t(:login)
     fill_in 'user_email', :with => 'test@ex.org'
     fill_in 'user_password', :with => 'ab123456789'
-    click_button 'Log in'
-    page.must_have_content 'You have to confirm your email address before continuing.'
+    click_button I18n.t(:login)
+    page.must_have_content I18n.t(:'devise.failure.unconfirmed')
   end
 
   test "confirmed user can view home page" do
@@ -44,10 +44,10 @@ class UserFlowsTest < ActionDispatch::IntegrationTest
     visit "/login"
     fill_in 'user_email', :with => users(:tom).email
     fill_in 'user_password', :with => '123456789ab'
-    click_button 'Log in'
-    page.must_have_content 'Signed in successfully.'
+    click_button I18n.t(:login)
+    page.must_have_content I18n.t(:'devise.sessions.signed_in')
     # Logout so other tests can occur without problems
-    click_link 'Log out'
+    click_link I18n.t(:logout)
   end
 
 end

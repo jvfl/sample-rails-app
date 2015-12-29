@@ -2,7 +2,7 @@ pt-BR:
   login: "Entrar"
   logout: "Sair"
   password: "Senha"
-  password_conditions: "Apenas números e letras, com no mínimo %{minimum_password_length} caracteres."
+  password_conditions: "A senha pode conter apenas números e letras, e deve ter no mínimo %{minimum_password_length} caracteres."
   password_confirmation: "Confirmação da Senha"
   forgot_pass: "Esqueceu sua senha?"
   change_my_pass: "Mudar minha senha"

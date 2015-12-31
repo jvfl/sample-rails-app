@@ -33,6 +33,9 @@ gem 'capybara_minitest_spec'
 gem 'bootstrap', '~> 4.0.0.alpha3'
 gem 'sprockets-rails', '>= 2.3.2'
 
+# Auxiliary gem for localization.
+gem 'http_accept_language'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

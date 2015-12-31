@@ -35,6 +35,7 @@ en:
   confirmation_inst: "Didn't receive confirmation instructions?"
   resend_confirmation: "Resend confirmation instructions"
   send_inst: "Send me the instructions"
+  registered_info: "Congratulations! You've just registered yourself!"
   email:
     welcome_header: "Welcome %{email}!"
     welcome_body: "You can confirm your account email through the link below:"
@@ -53,16 +54,19 @@ en:
       user:
         password: "Password"
         password_confirmation: "Password Confirmation"
+        confirmation_token: "Confirmation Token"
     errors:
       models:
         user:
           attributes:
             email:
-              blank: "field empty."
-              taken: "already in use by another user."
+              blank: "field empty"
+              taken: "already in use by another user"
             password:
-              blank: "field empty."
+              blank: "field empty"
               too_short: "is too short"
               invalid: "is invalid"
             password_confirmation:
-              confirmation: "is different from the password."
+              confirmation: "is different from the password"
+            confirmation_token:
+              blank: "can't be blank."

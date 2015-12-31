@@ -14,6 +14,7 @@ pt-BR:
   confirmation_inst: "Não recebeu as instruções de confirmação?" 
   resend_confirmation: "Mandar confirmação novamente"
   send_inst: "Enviar instruções"
+  registered_info: "Parabéns! Você acaba de se registrar!"
   email:
     welcome_header: "Bem-vindo %{email}!"
     welcome_body: "Você pode confirmar a sua conta através do link abaixo:"
@@ -32,16 +33,19 @@ pt-BR:
       user:
         password: "Senha"
         password_confirmation: "Confirmação da Senha"
+        confirmation_token: "Token de confirmação"
     errors:
       models:
         user:
           attributes:
             email:
-              blank: "não preenchido."
-              taken: "já foi utilizado por outro usuário."
+              blank: "não preenchido"
+              taken: "já foi utilizado por outro usuário"
             password:
-              blank: "não preenchida."
-              too_short: "muito curta."
-              invalid: "inválida."
+              blank: "não preenchida"
+              too_short: "muito curta"
+              invalid: "inválida"
             password_confirmation:
               confirmation: "está diferente da senha"
+            confirmation_token:
+              blank: "não pode ser vazio"

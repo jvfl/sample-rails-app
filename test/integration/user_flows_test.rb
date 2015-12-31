@@ -19,7 +19,7 @@ class UserFlowsTest < ActionDispatch::IntegrationTest
   test "alphanumeric passwords only" do
   	visit "/register"
     fill_in 'user_email', :with => 'test2@ex.org'
-    fill_in 'user_password', :with => '123456789!', :exact => true
+    fill_in 'user_password', :with => '123456789!'
     fill_in 'user_password_confirmation', :with => '123456789!'
     click_button I18n.t(:signup)
     page.must_have_content I18n.t(:'activerecord.errors.models.user.attributes.password.invalid')

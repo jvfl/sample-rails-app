@@ -44,4 +44,25 @@ en:
     request_pass_change_body: "Someone has requested a link to change your password. You can do this through the link below."
     request_pass_change_ignore: "If you didn't request this, please ignore this email."
     request_pass_change_modification: "Your password won't change until you access the link above and create a new one."
-
+  activerecord:
+    models:
+      user:
+        one: "User"
+        other: "Users"
+    attributes:
+      user:
+        password: "Password"
+        password_confirmation: "Password Confirmation"
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              blank: "field empty."
+              taken: "already in use by another user."
+            password:
+              blank: "field empty."
+              too_short: "is too short"
+              invalid: "is invalid"
+            password_confirmation:
+              confirmation: "is different from the password."

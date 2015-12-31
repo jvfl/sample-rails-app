@@ -37,10 +37,11 @@ pt-BR:
         user:
           attributes:
             email:
-              blank: ": por favor preencha o campo de email."
+              blank: "não preenchido."
+              taken: "já foi utilizado por outro usuário."
             password:
-              blank: ": por favor preencha o campo de senha."
-              too_short: ": senha muito curta."
-              invalid: ": senha inválida."
+              blank: "não preenchida."
+              too_short: "muito curta."
+              invalid: "inválida."
             password_confirmation:
-              confirmation: ": a senha está diferente da confirmação."
+              confirmation: "está diferente da senha"
